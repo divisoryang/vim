@@ -24,3 +24,20 @@ vim config
 3. Add tmp folder
 
 		mkdir ~/.tmp
+		
+		
+4. Go auto completion
+
+	refer to ```https://github.com/nsf/gocode```
+	
+	brief installation procedure: 
+	
+		cd ~/tmp
+		git clone https://github.com/nsf/gocode
+		cd gocode
+		go build .
+		cp gocode $GOBIN/
+		cd vim
+		./update.sh
+	
+	In my computer, GO installed in ~/src/go, just replace this path with yours in .vimrc
