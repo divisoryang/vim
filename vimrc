@@ -50,9 +50,13 @@ Bundle 'bling/vim-airline'
 
 " YouCompleteMe
 Bundle 'Valloric/YouCompleteMe'
-"set YouCompleteMe trigger key 
-let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+" set YouCompleteMe trigger key 
+let g:ycm_key_list_previous_completion=['<Up>']
+" disable scratch window
+set completeopt=menu,menuone
+"" Ultisnips
+let g:UltiSnipsExpandTrigger="<c-tab>"
+let g:UltiSnipsListSnippets="<c-s-tab>"
 
 
 
