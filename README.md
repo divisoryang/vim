@@ -20,3 +20,7 @@ vim config
 		cd ~/.vim/bundle/YouCompleteMe ; ./install
 		
 	ps. CMake is required for YouCompleteMe installation, Font that I use is Inconsolata.
+	
+3. Add tmp folder
+
+		mkdir ~/.tmp

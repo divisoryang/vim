@@ -18,16 +18,16 @@ set backupdir=~/.tmp
 " 不要生成swap文件
 set noswapfile
 
-set history=50		" keep 50 lines of command line history
-set nu      " show line number
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
-set cindent   " 使用C语言的规则自动缩进，当你敲回车时会自动缩进，所有类C语言（PHP，JAVA）都试用，比smartindent更智能
+set history=50			" keep 50 lines of command line history
+set nu					" show line number
+set ruler				" show the cursor position all the time
+set showcmd				" display incomplete commands
+set incsearch			" do incremental searching
+set cindent				" 使用C语言的规则自动缩进，当你敲回车时会自动缩进，所有类C语言（PHP，JAVA）都试用，比smartindent更智能
+set autoindent			" always set autoindenting on
 set tabstop=4
 set shiftwidth=4
-" set expandtab           " 把tab自动扩展成空格 -- 有些格式需要用到tab
-set softtabstop=4       " 方便开启了expandtab后每次退格键删除x个空格
+set softtabstop=4		" 方便开启了expandtab后每次退格键删除x个空格
 
 "pathogen
 call pathogen#infect()
@@ -54,7 +54,6 @@ Bundle 'Valloric/YouCompleteMe'
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 
-Bundle 'Rykka/riv.vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -70,6 +69,19 @@ Bundle 'dgryski/vim-godef'
 
 " go 自动补全
 Bundle 'Blackrush/vim-gocode'
+
+if has("mac") || has("macunix")
+	filetype off
+	filetype plugin indent off
+	set runtimepath+=~/src/go/misc/vim
+	set runtimepath+=~/go/misc/vim
+	filetype plugin indent on
+	syntax on
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" End Go 配置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -87,7 +99,6 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-set autoindent		" always set autoindenting on
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -97,19 +108,10 @@ if has("autocmd")
   filetype indent on  " 允许vim为不同类型的文件定义不同的缩进格式
 
   " 自定义python的缩进
-  autocmd FileType python setlocal expandtab softtabstop shiftwidth=4  tabstop=4 softtabstop=4
+  autocmd FileType python setlocal expandtab shiftwidth=4  tabstop=4 softtabstop=4
 
   " 定义ruby的编译器
   autocmd FileType ruby compiler ruby
-endif
-
-if has("mac") || has("macunix")
-	filetype off
-	filetype plugin indent off
-	set runtimepath+=~/src/go/misc/vim
-	set runtimepath+=~/go/misc/vim
-	filetype plugin indent on
-	syntax on
 endif
 
 
@@ -217,7 +219,8 @@ let g:tagbar_type_go = {
 \ }
 
 
-" riv
+" riv .rst 文件
+Bundle 'Rykka/riv.vim'
 let g:riv_fold_level = 0
 let g:riv_fold_auto_update = 0
 let rst_syntax_folding = 0
