@@ -1,5 +1,6 @@
 " color scheme
 color solarized
+set background=dark
 
 " 如果是新窗口， 就显示文件列表
 autocmd vimenter * if !argc() | NERDTree | endif
