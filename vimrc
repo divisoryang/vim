@@ -54,25 +54,13 @@ Bundle 'Valloric/YouCompleteMe'
 let g:ycm_key_list_previous_completion=['<Up>']
 " disable scratch window
 set completeopt=menu,menuone
-"" Ultisnips
-let g:UltiSnipsExpandTrigger="<c-tab>"
-let g:UltiSnipsListSnippets="<c-s-tab>"
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GO 配置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" 自动添加删除go import
-Bundle 'cespare/vim-golang'
-autocmd BufWritePre *.go :Fmt	" 写入go文件前把import修正
-
-" 显示go函数定义
-Bundle 'dgryski/vim-godef'
-
-" go 自动补全
-Bundle 'Blackrush/vim-gocode'
+" vim-go
+Bundle 'fatih/vim-go'
 
 if has("mac") || has("macunix")
 	filetype off
