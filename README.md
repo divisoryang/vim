@@ -15,6 +15,7 @@ vim config
 2. Install
 
 	Open Gvim and type ```:BundleInstall```  
+	After Bundles Installed, run :GoInstallBinaries, install Go dependences for go-vim  
 	You need to compile YouCompleteMe after BundleInstall
 	
 		cd ~/.vim/bundle/YouCompleteMe ; ./install
@@ -25,19 +26,3 @@ vim config
 
 		mkdir ~/.tmp
 		
-		
-4. Go auto completion
-
-	refer to ```https://github.com/nsf/gocode```
-	
-	brief installation procedure: 
-	
-		cd ~/tmp
-		git clone https://github.com/nsf/gocode
-		cd gocode
-		go build .
-		cp gocode $GOBIN/
-		cd vim
-		./update.sh
-	
-	In my computer, GO installed in ~/src/go, just replace this path with yours in .vimrc
